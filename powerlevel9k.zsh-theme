@@ -1629,13 +1629,17 @@ prompt_vi_mode() {
 # Virtualenv: current working virtualenv
 # More information on virtualenv (Python):
 # https://virtualenv.pypa.io/en/latest/
+set_default POWERLEVEL9K_VIRTUALENV_LEFT_DELIMITER "("
+set_default POWERLEVEL9K_VIRTUALENV_RIGHT_DELIMITER ")"
+set_default POWERLEVEL9K_VIRTUALENV_BGCOLOR "$DEFAULT_COLOR"
+set_default POWERLEVEL9K_VIRTUALENV_FGCOLOR "blue"
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
 
   # Early exit; $virtualenv_path must always be set.
   [[ -z "$virtualenv_path" ]] && return
 
-  "$1_prompt_segment" "$0" "$2" "blue" "$DEFAULT_COLOR" "${virtualenv_path:t}" 'PYTHON_ICON'
+  "$1_prompt_segment" "$0" "$2" "blue" "$DEFAULT_COLOR" "$POWERLEVEL9K_VIRTUALENV_LEFT_DELIMITER${virtualenv_path:t}$POWERLEVEL9K_VIRTUALENV_RIGHT_DELIMITER" 'PYTHON_ICON'
 }
 
 ################################################################
