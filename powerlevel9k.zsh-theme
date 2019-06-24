@@ -1631,8 +1631,6 @@ prompt_vi_mode() {
 # https://virtualenv.pypa.io/en/latest/
 set_default POWERLEVEL9K_VIRTUALENV_LEFT_DELIMITER "("
 set_default POWERLEVEL9K_VIRTUALENV_RIGHT_DELIMITER ")"
-set_default POWERLEVEL9K_VIRTUALENV_BGCOLOR "$DEFAULT_COLOR"
-set_default POWERLEVEL9K_VIRTUALENV_FGCOLOR "blue"
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
 
